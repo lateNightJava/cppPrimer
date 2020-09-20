@@ -1,0 +1,8 @@
+# use to ignore extensionless files
+*
+!*/
+!Makefile
+!*.*
+# ignore output files
+*.out
+*.o
