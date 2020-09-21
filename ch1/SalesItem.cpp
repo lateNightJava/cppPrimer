@@ -69,8 +69,16 @@ namespace latenight {
   }
 
   // not the const is used to prevent re-assingnments
-  SalesItem &operator+(const SalesItem &item1, const SalesItem &item2) {
+  // "item1 + item2" is like saying +(item1, item2)
+  SalesItem operator+(const SalesItem &item1, const SalesItem &item2) {
     SalesItem salesItem;
+
+    if (item1.m_isbn == item2.m_isbn) {
+      salesItem.m_isbn = item1.m_isbn;
+      salesItem.m_copiesSold = item1.m_copiesSold + item2.m_copiesSold;
+      salesItem.m_revenue = item1.m_revenue + item2.m_revenue;
+      salesItem.m_averagePrice = salesItem.m_revenue / salesItem.m_copiesSold;
+    }
 
     return salesItem;
   }

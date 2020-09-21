@@ -19,12 +19,11 @@ namespace latenight {
     public:
       SalesItem();
       SalesItem(std::string isbn);
-      // overide the + operator
-      SalesItem &operator+(const SalesItem &item1, const SalesItem &item2);
-      // friend is used allow another class to have access to to members of SalesItem
+      friend SalesItem operator+(const SalesItem &item1, const SalesItem &item2);
+      // friend is used allow another class to have access to to private members of SalesItem
       friend std::ostream &operator<<(std::ostream &os, const SalesItem &item);
       friend std::istream &operator>>(std::istream &is, SalesItem &item);
-      
+
     private:
       void init();
   };
