@@ -6,3 +6,5 @@
 # ignore output files
 *.out
 *.o
+# other ignores
+book/

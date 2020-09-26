@@ -17,6 +17,10 @@ namespace latenight {
     m_averagePrice = 0.00;
   }
 
+  std::string SalesItem::isbn() {
+    return m_isbn;
+  }
+
   // how does this work?
   // parameters use '&' to use the same objects with different name, (alias)
   // return type says it returns the same "cout" object
@@ -30,8 +34,6 @@ namespace latenight {
 
     return os;
   }
-
-
 
   // more to help understand
   // cin >> item is the same as saying >>(cin, item)

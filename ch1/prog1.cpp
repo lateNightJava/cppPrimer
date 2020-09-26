@@ -14,9 +14,12 @@ int main() {
   std::cin >> salesItem2 >> salesItem3;
   std::cout << "Item2 info: " << std::endl << salesItem2 << std::endl;
   std::cout << "Item3 info: " << std::endl << salesItem3 << std::endl;
-  std::cout << "Item2 + Item3 info: " << std::endl << salesItem2 + salesItem3 << std::endl;
 
-  std::cout << "End of main" << std::endl;
-
-  return 0;
+  if (salesItem2.isbn() == salesItem3.isbn()) {
+    std::cout << "Item2 + Item3 info: " << std::endl << salesItem2 + salesItem3 << std::endl;
+    return 0;
+  } else {
+    std::cerr << "Data must refer to same isbn" << std::endl;
+    return -1;
+  }
 }
